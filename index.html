@@ -1118,7 +1118,27 @@ margin-top: 5px;
     border-bottom: 1px solid #e9ecef;
     margin-bottom: 10px;
 }
+  /* 侧边栏分类双语样式 */
+.sidebar-category-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
+.sidebar-category-zh {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.sidebar-category-en {
+    font-size: 0.7rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1.1;
+    opacity: 0.8;
+}
 /* 公司列表布局 */
 .companies-layout {
     display: flex;
@@ -1186,7 +1206,21 @@ margin-top: 5px;
         font-size: 1.2rem;
         display: block;
     }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+
     
+    .sidebar-category-zh {
+        font-size: 0.8rem;
+        margin-bottom: 1px;
+    }
+    
+    .sidebar-category-en {
+        font-size: 0.65rem;
+    }
+}
     .sidebar-title {
         padding: 10px 8px;
         text-align: center;
@@ -2415,7 +2449,10 @@ function initSidebarCategories() {
         categoryItem.className = 'sidebar-category';
         categoryItem.innerHTML = `
             <i class="${category.icon}"></i>
-            <span>${category.name}</span>
+            <div class="sidebar-category-content">
+                <div class="sidebar-category-zh">${category.name}</div>
+                <div class="sidebar-category-en">${category.ename}</div>
+            </div>
         `;
         categoryItem.addEventListener('click', () => {
             // 切换分类时清除搜索
@@ -2881,6 +2918,7 @@ if (filteredProducts.length === 0) {
     </script>
 </body>
 </html>
+
 
 
 
