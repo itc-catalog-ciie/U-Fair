@@ -2224,10 +2224,7 @@ let isSearching = false; // 新增：是否正在搜索
 }
         
         const categories = [
-            { id: 1, name: "食品展区", ename:"Processed Food", icon: "fas fa-utensils",show:"7.1A7-01" },
-            { id: 2, name: "土畜商会非洲产品展区", ename:"African Products", icon: "fas fa-earth-africa",show:"8.1C6-02" },
-            { id: 3, name: "消费品展区", ename:"Consumer Goods", icon: "fas fa-shopping-bag",show:"5.1C6-05" },
-            { id: 4, name: "服务贸易展区", ename:"Trade in Service", icon: "fas fa-handshake",show:"7.2A1-04" }
+            { id: 1, name: "食品展区", ename:"Processed Food", icon: "fas fa-utensils",show:"7.1A7-01" }
         ];
         
        //导入csv文件
@@ -2235,7 +2232,7 @@ let isSearching = false; // 新增：是否正在搜索
 let companies = [];
 
 function loadCSVData() {
-    Papa.parse('data/companies_20251027.csv', {
+    Papa.parse('data/ufair_20251210.csv', {
         download: true,
         header: true,
         skipEmptyLines: true,
@@ -2288,7 +2285,7 @@ function loadCSVData() {
 
 // 新增：加载产品CSV数据
 function loadProductCSVData() {
-    Papa.parse('data/product_list.csv', { // 请确保路径指向您的产品CSV文件
+    Papa.parse('data/ufair product_list.csv', { // 请确保路径指向您的产品CSV文件
         download: true,
         header: true,
         skipEmptyLines: true,
@@ -2982,6 +2979,7 @@ if (filteredProducts.length === 0) {
     </script>
 </body>
 </html>
+
 
 
 
